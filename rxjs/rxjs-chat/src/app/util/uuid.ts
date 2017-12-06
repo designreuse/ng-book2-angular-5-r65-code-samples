@@ -1,6 +1,8 @@
 /* jshint bitwise:false, node:true */
 /* tslint:disable:no-bitwise no-var-keyword typedef */
 
+// UUID 是 通用唯一识别码（Universally Unique Identifier）的缩写
+
 // taken from TodoMVC
 export function uuid() {
     var i, random;

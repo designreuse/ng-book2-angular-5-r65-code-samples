@@ -21,4 +21,6 @@ import { uuid } from './../util/uuid';
      this.text            = obj && obj.text            || null;
      this.thread          = obj && obj.thread          || null;
    }
+
+   // ts 函数中 ?: 表示参数可传可不传
  }
