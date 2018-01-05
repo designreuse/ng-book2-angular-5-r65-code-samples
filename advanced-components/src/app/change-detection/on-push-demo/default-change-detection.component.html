@@ -5,23 +5,19 @@
 <form class="ui form">
   <div class="field">
     <label>First Name</label>
-    <input
-    type="text"
-    [(ngModel)]="profile.first"
-    name="first"
-    placeholder="First Name">
+    <input type="text" [(ngModel)]="profile.first" (ngModelChange)="getFirstChange($event)" name="first" placeholder="First Name">
+
   </div>
   <div class="field">
     <label>Last Name</label>
-    <input
-    type="text"
-    [(ngModel)]="profile.last"
-    name="last"
-    placeholder="Last Name">
+<input type="text" [(ngModel)]="profile.last" name="last" (ngModelChange)="getLastChange($event)" placeholder="Last Name">
+
   </div>
 </form>
 
-<h5><em>Updates if either changes (e.g. more often)</em></h5>
+<h5>
+  <em>Updates if either changes (e.g. more often)</em>
+</h5>
 <div>
   {{profile.lastChanged() | date:'medium'}}
 </div>

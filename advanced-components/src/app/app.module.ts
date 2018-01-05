@@ -36,6 +36,8 @@ import { StylingDemoComponent } from './styling/styling-demo/styling-demo.compon
 import { NgBookIfDemoComponent } from './templates/ng-book-if/ng-book-if-demo.component';
 import { NgBookForDemoComponent } from './templates/ng-book-for/ng-book-for-demo.component';
 import { ObservablesDemoComponent } from './change-detection/observables-demo/observables-demo.component';
+
+
 import { OnPushDemoComponent } from './change-detection/on-push-demo/on-push-demo.component';
 import { ContentProjectionDemoComponent } from './content-projection/content-projection-demo/content-projection-demo.component';
 import { ContentTabsDemoComponent } from './tabs/content-tabs-demo/content-tabs-demo.component';
@@ -49,27 +51,30 @@ import { OnChangesDemoComponent } from './lifecycle/on-changes/on-changes-demo.c
 import { DiffersDemoComponent } from './lifecycle/differs/differs-demo.component';
 import { AllHooksDemoComponent } from './lifecycle/all-hooks/all-hooks-demo.component';
 
+
+
 /*
  * Here's the master list of our examples for this chapter.
  */
 const examples: ExampleDef[] = [ /* tslint:disable:max-line-length */
-  {label: 'Intro',                            name: 'Root',                       path: '',                       component: IntroComponent},
-  {label: 'Styling',                          name: 'Styling',                    path: 'styling',                component: StylingDemoComponent },
-  {label: 'Modifying the Host (Step 1)',      name: 'Host1',                      path: 'host-step-1',            component: PopupDemoComponent1, dev: true},
-  {label: 'Modifying the Host (Step 2)',      name: 'Host2',                      path: 'host-step-2',            component: PopupDemoComponent2, dev: true},
-  {label: 'Modifying the Host (Step 3)',      name: 'Host3',                      path: 'host-step-3',            component: PopupDemoComponent3, dev: true},
-  {label: 'Modifying the Host (Step 4)',      name: 'Host4',                      path: 'host-step-4',            component: PopupDemoComponent4, dev: true},
-  {label: 'Popup - Modifying the Host',       name: 'Host',                       path: 'host-final',             component: PopupDemoComponent},
-  {label: 'Tabs - Component Querying',        name: 'Tabs',                       path: 'tabs',                   component: ContentTabsDemoComponent},
-  {label: 'Lifecycle 1 - OnInit / OnDestroy', name: 'Lifecycle1',                 path: 'lifecycle-hooks-1',      component: OnInitDemoComponent },
-  {label: 'Lifecycle 2 - OnChanges',          name: 'Lifecycle2',                 path: 'lifecycle-hooks-2',      component: OnChangesDemoComponent },
-  {label: 'Lifecycle 3 - Differs',            name: 'Lifecycle3',                 path: 'lifecycle-hooks-3',      component: DiffersDemoComponent },
-  {label: 'Lifecycle 4 - All Hooks',          name: 'Lifecycle4',                 path: 'lifecycle-hooks-4',      component: AllHooksDemoComponent },
-  {label: 'ngBookFor',                        name: 'NgBookFor',                  path: 'ng-book-for',            component: NgBookForDemoComponent },
-  {label: 'ngBookIf',                         name: 'NgBookIf',                   path: 'ng-book-if',             component: NgBookIfDemoComponent },
-  {label: 'Content Projection',               name: 'ContentProjection',          path: 'content-projection',     component: ContentProjectionDemoComponent },
-  {label: 'Change Detection - OnPush',        name: 'ChangeDetectionOnPush',      path: 'change-detection-onpush', component: OnPushDemoComponent },
-  {label: 'Change Detection - Observables',   name: 'ChangeDetectionObservables', path: 'change-detection-observ', component: ObservablesDemoComponent },
+  { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
+  { label: 'Styling', name: 'Styling', path: 'styling', component: StylingDemoComponent },
+  { label: 'Modifying the Host (Step 1)', name: 'Host1', path: 'host-step-1', component: PopupDemoComponent1, dev: true },
+  { label: 'Modifying the Host (Step 2)', name: 'Host2', path: 'host-step-2', component: PopupDemoComponent2, dev: true },
+  { label: 'Modifying the Host (Step 3)', name: 'Host3', path: 'host-step-3', component: PopupDemoComponent3, dev: true },
+  { label: 'Modifying the Host (Step 4)', name: 'Host4', path: 'host-step-4', component: PopupDemoComponent4, dev: true },
+  { label: 'Popup - Modifying the Host', name: 'Host', path: 'host-final', component: PopupDemoComponent },
+  { label: 'Tabs - Component Querying', name: 'Tabs', path: 'tabs', component: ContentTabsDemoComponent },
+  { label: 'Lifecycle 1 - OnInit / OnDestroy', name: 'Lifecycle1', path: 'lifecycle-hooks-1', component: OnInitDemoComponent },
+  { label: 'Lifecycle 2 - OnChanges', name: 'Lifecycle2', path: 'lifecycle-hooks-2', component: OnChangesDemoComponent },
+  { label: 'Lifecycle 3 - Differs', name: 'Lifecycle3', path: 'lifecycle-hooks-3', component: DiffersDemoComponent },
+  { label: 'Lifecycle 4 - All Hooks', name: 'Lifecycle4', path: 'lifecycle-hooks-4', component: AllHooksDemoComponent },
+  { label: 'ngBookFor', name: 'NgBookFor', path: 'ng-book-for', component: NgBookForDemoComponent },
+  { label: 'ngBookIf', name: 'NgBookIf', path: 'ng-book-if', component: NgBookIfDemoComponent },
+  { label: 'Content Projection', name: 'ContentProjection', path: 'content-projection', component: ContentProjectionDemoComponent },
+  { label: 'Change Detection - OnPush', name: 'ChangeDetectionOnPush', path: 'change-detection-onpush', component: OnPushDemoComponent },
+  { label: 'Change Detection - Observables', name: 'ChangeDetectionObservables', path: 'change-detection-observ', component: ObservablesDemoComponent },
+  
 ]; /* tslint:enable:max-line-length */
 
 // AOT Limitation, see:
@@ -103,6 +108,7 @@ const routes: Routes = [
   { path: 'lifecycle-hooks-2', component: OnChangesDemoComponent, pathMatch: 'full' },
   { path: 'lifecycle-hooks-3', component: DiffersDemoComponent, pathMatch: 'full' },
   { path: 'lifecycle-hooks-4', component: AllHooksDemoComponent, pathMatch: 'full' },
+
 ];
 
 @NgModule({
@@ -128,7 +134,7 @@ const routes: Routes = [
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    { provide: 'ExampleDefs',    useValue: examples }
+    { provide: 'ExampleDefs', useValue: examples }
   ],
   bootstrap: [AppComponent]
 })

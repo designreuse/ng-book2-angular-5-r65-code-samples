@@ -7,6 +7,8 @@ import { OnPushChangeDetectionComponent } from './on-push-demo/on-push-change-de
 import { DefaultChangeDetectionComponent } from './on-push-demo/default-change-detection.component';
 import { ObservableChangeDetectionComponent } from './observables-demo/observable-change-detection.component';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +19,7 @@ import { ObservableChangeDetectionComponent } from './observables-demo/observabl
     ObservablesDemoComponent,
     DefaultChangeDetectionComponent,
     OnPushChangeDetectionComponent,
-    ObservableChangeDetectionComponent
+    ObservableChangeDetectionComponent,
   ]
 })
 export class ChangeDetectionModule { }

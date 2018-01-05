@@ -17,3 +17,5 @@ export class DemoFormSkuComponent implements OnInit {
   }
 
 }
+
+//  ngForm 指令:  #heroForm="ngForm" 取得对form的引用

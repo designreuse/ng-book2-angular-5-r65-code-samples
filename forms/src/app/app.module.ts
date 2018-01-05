@@ -29,32 +29,42 @@ import { DemoFormWithEventsComponent } from './demo-form-with-events/demo-form-w
 import { DemoFormWithValidationsExplicitComponent } from './demo-form-with-validations-explicit/demo-form-with-validations-explicit.component';
 import { DemoFormWithValidationsShorthandComponent } from './demo-form-with-validations-shorthand/demo-form-with-validations-shorthand.component';
 
+import { HeroFormComponent } from './hero-form/hero-form.component';
+import { CvaComponent } from './control-value-accessor/cva.component';
+import { PRadioComponent } from './control-value-accessor/p-radio/p-radio.component';
 import { ExampleDef } from './example.model';
 
 /*
  * Here's the master list of our examples for this chapter.
  */
 export const examples: ExampleDef[] = [
-   {label: 'Intro', name: 'Root', path: '', component: IntroComponent},
-   {label: 'Sku', name: 'DemoFormSku', path: 'sku', component: DemoFormSkuComponent},
-   {label: 'Sku (with Builder)', name: 'DemoFormSkuWithBuilder', path: 'sku-builder', component: DemoFormSkuWithBuilderComponent},
-   {label: 'Validation Explicit', name: 'DemoFormValidationsExplicit', path: 'validations-explicit', component: DemoFormWithValidationsExplicitComponent},
-   {label: 'Validation Shorthand', name: 'DemoFormValidationsShorthand', path: 'validations-shorthand', component: DemoFormWithValidationsShorthandComponent},
-   {label: 'Custom Validation', name: 'DemoFormWithCustomValidation', path: 'custom-validation', component: DemoFormWithCustomValidationComponent},
-   {label: 'Events', name: 'DemoFormWithEvents', path: 'events', component: DemoFormWithEventsComponent},
-   {label: 'NgModel', name: 'DemoFormNgModel', path: 'ng-model', component: DemoFormNgModelComponent},
+  { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
+  { label: 'Sku', name: 'DemoFormSku', path: 'sku', component: DemoFormSkuComponent },
+  { label: 'Sku (with Builder)', name: 'DemoFormSkuWithBuilder', path: 'sku-builder', component: DemoFormSkuWithBuilderComponent },
+  { label: 'Validation Explicit', name: 'DemoFormValidationsExplicit', path: 'validations-explicit', component: DemoFormWithValidationsExplicitComponent },
+  { label: 'Validation Shorthand', name: 'DemoFormValidationsShorthand', path: 'validations-shorthand', component: DemoFormWithValidationsShorthandComponent },
+  { label: 'Custom Validation', name: 'DemoFormWithCustomValidation', path: 'custom-validation', component: DemoFormWithCustomValidationComponent },
+  { label: 'Events', name: 'DemoFormWithEvents', path: 'events', component: DemoFormWithEventsComponent },
+  { label: 'NgModel', name: 'DemoFormNgModel', path: 'ng-model', component: DemoFormNgModelComponent },
+  { label: 'HeroForm', name: 'HeroForm', path: 'hero-form', component: HeroFormComponent },
+  { label: 'ControlValueAccessor', name: 'ControlValueAccessor', path: 'contro-value-accessor', component: CvaComponent }
 ];
 
 const routes: Routes = [
   { path: '', component: IntroComponent, pathMatch: 'full' },
   { path: 'sku', component: DemoFormSkuComponent, pathMatch: 'full' },
   { path: 'sku-builder', component: DemoFormSkuWithBuilderComponent, pathMatch: 'full' },
-  { path: 'validations-explicit', component: DemoFormWithValidationsExplicitComponent, pathMatch: 'full'},
-  { path: 'validations-shorthand', component: DemoFormWithValidationsShorthandComponent, pathMatch: 'full'},
-  { path: 'custom-validation', component: DemoFormWithCustomValidationComponent, pathMatch: 'full'},
-  { path: 'events', component: DemoFormWithEventsComponent, pathMatch: 'full'},
-  { path: 'ng-model', component: DemoFormNgModelComponent, pathMatch: 'full'}
+  { path: 'validations-explicit', component: DemoFormWithValidationsExplicitComponent, pathMatch: 'full' },
+  { path: 'validations-shorthand', component: DemoFormWithValidationsShorthandComponent, pathMatch: 'full' },
+  { path: 'custom-validation', component: DemoFormWithCustomValidationComponent, pathMatch: 'full' },
+  { path: 'events', component: DemoFormWithEventsComponent, pathMatch: 'full' },
+  { path: 'ng-model', component: DemoFormNgModelComponent, pathMatch: 'full' },
+  { path: 'hero-form', component: HeroFormComponent, pathMatch: 'full' },
+  { path: 'contro-value-accessor', component: CvaComponent, pathMatch: 'full' },
 ];
+
+import { ClickMeComponent } from './demo-form-ng-model/click-me.component';
+import { KeyUpComponent } from './demo-form-ng-model/keyup.components';
 
 @NgModule({
   declarations: [
@@ -62,13 +72,22 @@ const routes: Routes = [
     IntroComponent,
     SidebarComponent,
     SidebarItemComponent,
+
+
+    ClickMeComponent,
+    KeyUpComponent,
+
+
     DemoFormNgModelComponent,
     DemoFormSkuWithBuilderComponent,
     DemoFormSkuComponent,
     DemoFormWithCustomValidationComponent,
     DemoFormWithEventsComponent,
     DemoFormWithValidationsExplicitComponent,
-    DemoFormWithValidationsShorthandComponent
+    DemoFormWithValidationsShorthandComponent,
+    HeroFormComponent,
+    PRadioComponent,
+    CvaComponent
   ],
   imports: [
     BrowserModule,
@@ -78,9 +97,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    { provide: APP_BASE_HREF,    useValue: '/' },
+    { provide: APP_BASE_HREF, useValue: '/' },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    { provide: 'ExampleDefs',    useValue: examples }
+    { provide: 'ExampleDefs', useValue: examples }
   ],
   bootstrap: [AppComponent]
 })
