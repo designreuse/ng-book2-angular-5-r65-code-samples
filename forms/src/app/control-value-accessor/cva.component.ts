@@ -18,7 +18,7 @@ export class CvaComponent implements OnInit {
     constructor() {
         this.age = '18';
         this.inside = 'inside init';
-        this.checkedValue = '1';
+        this.checkedValue = 'a';
         this.model = {
             options: 1,
             checkbox: undefined
