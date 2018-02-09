@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
@@ -7,6 +8,7 @@ import {
   Routes
 } from '@angular/router';
 
+// child route config
 import {
   routes as childRoutes,
   ProductsModule
@@ -36,7 +38,7 @@ const routes: Routes = [
   {
     path: 'protected',
     component: ProtectedComponent,
-    canActivate: [ LoggedInGuard ]
+    canActivate: [LoggedInGuard]
   },
 
   // nested
@@ -44,7 +46,9 @@ const routes: Routes = [
     path: 'products',
     component: ProductsComponent,
     children: childRoutes
-  }
+  },
+
+  { path: '**', redirectTo: 'home'}   //  只能重定向一次
 ];
 
 @NgModule({
@@ -60,14 +64,16 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes), // <-- routes
+    // RouterModule.forRoot(routes), // <-- routes
+    RouterModule.forRoot(routes, { useHash: true }),  // .../#/crisis-center/ 第二种方法
 
     // added this for our child module
     ProductsModule
   ],
   providers: [
     // uncomment this for "hash-bang" routing
-    // { provide: LocationStrategy, useClass: HashLocationStrategy }
+    // { provide: LocationStrategy, useClass: HashLocationStrategy }, // 第一种方法
+
     AUTH_PROVIDERS,
     LoggedInGuard
   ],
