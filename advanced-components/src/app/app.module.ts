@@ -7,6 +7,8 @@ import {
   Routes,
   Router
 } from '@angular/router';
+
+
 import {
   APP_BASE_HREF,
   LocationStrategy,
@@ -57,7 +59,6 @@ import { AllHooksDemoComponent } from './lifecycle/all-hooks/all-hooks-demo.comp
  * Here's the master list of our examples for this chapter.
  */
 const examples: ExampleDef[] = [ /* tslint:disable:max-line-length */
-  { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Styling', name: 'Styling', path: 'styling', component: StylingDemoComponent },
   { label: 'Modifying the Host (Step 1)', name: 'Host1', path: 'host-step-1', component: PopupDemoComponent1, dev: true },
   { label: 'Modifying the Host (Step 2)', name: 'Host2', path: 'host-step-2', component: PopupDemoComponent2, dev: true },
@@ -74,7 +75,7 @@ const examples: ExampleDef[] = [ /* tslint:disable:max-line-length */
   { label: 'Content Projection', name: 'ContentProjection', path: 'content-projection', component: ContentProjectionDemoComponent },
   { label: 'Change Detection - OnPush', name: 'ChangeDetectionOnPush', path: 'change-detection-onpush', component: OnPushDemoComponent },
   { label: 'Change Detection - Observables', name: 'ChangeDetectionObservables', path: 'change-detection-observ', component: ObservablesDemoComponent },
-  
+
 ]; /* tslint:enable:max-line-length */
 
 // AOT Limitation, see:
@@ -91,7 +92,7 @@ const examples: ExampleDef[] = [ /* tslint:disable:max-line-length */
 // Above will work fine for JIT, but not in AOT, so for now, define them
 // manually
 const routes: Routes = [
-  { path: '', component: IntroComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'styling', pathMatch: 'full' },
   { path: 'styling', component: StylingDemoComponent, pathMatch: 'full' },
   { path: 'ng-book-if', component: NgBookIfDemoComponent, pathMatch: 'full' },
   { path: 'ng-book-for', component: NgBookForDemoComponent, pathMatch: 'full' },
@@ -114,7 +115,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    IntroComponent,
     SidebarComponent,
     SidebarItemComponent
   ],
