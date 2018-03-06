@@ -15,6 +15,7 @@ import { LoginComponent }          from './login/login.component';
 import { PageNotFoundComponent }   from './page-not-found/not-found.component';
 
 import { DialogService }           from './providers/dialog.service';
+import { PathMatchTestComponent } from './path-match-test/path-match-test.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { DialogService }           from './providers/dialog.service';
     ComposeMessageComponent,
     LoginComponent,
     PageNotFoundComponent,
+    PathMatchTestComponent,
   ],
   providers: [
     DialogService,

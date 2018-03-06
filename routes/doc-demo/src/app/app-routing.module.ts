@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { PageNotFoundComponent } from './page-not-found/not-found.component';
+import { PathMatchTestComponent } from './path-match-test/path-match-test.component';
 
 import { CanDeactivateGuard } from './providers/can-deactivate-guard.service';
 import { AuthGuard } from './providers/auth-guard.service';
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
       {
         enableTracing: true, // <-- debugging purposes only
         preloadingStrategy: SelectivePreloadingStrategy,
+        useHash: true
       }
     )
   ],
